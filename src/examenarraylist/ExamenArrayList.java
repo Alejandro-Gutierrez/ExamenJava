@@ -14,8 +14,8 @@ public class ExamenArrayList {
         ArrayList <String> nombre = new ArrayList();
         ArrayList <Double> tiempo = new ArrayList();
         ArrayList <Double> velocidad = new ArrayList();
-        int n;
-        double distancia=100,suma=0;
+        int n, cont=0,c=0;
+        double distancia=100,suma=0,  a=0;
         System.out.println("Ingrese la cantidad de estudiantes que va a ingresar: ");
         n=leer.nextInt();
         
@@ -35,6 +35,7 @@ public class ExamenArrayList {
             tiempo.add((distancia/velocidad.get(x)));
            
         }
+        
         for(int x=0; x<n ; x++){
             System.out.println("");
             System.out.println("----Datos del estudiante "+ (x+1)+" ----");
@@ -49,6 +50,27 @@ public class ExamenArrayList {
         }
         System.out.println("");
         System.out.println("El promedio de los tiempos: "+ (suma/tiempo.size()));
+        
+        for(int x=0; x<n ; x++){
+            if (tiempo.get(x)>suma/tiempo.size()){
+                cont++;
+            }
+           
+        }
+        
+        for(int x=0; x<velocidad.size();x++){
+            if(tiempo.get(x)>a){
+                a=tiempo.get(x);
+                c=x;
+            }
+        }
+        System.out.println("");
+        System.out.println("La cantidad de estudiante por ensima del promedio es de: "+cont);
+        System.out.println("El estudiante mas rapido es "+ nombre.get(c)+" con un tiempo de: "+ tiempo.get(x));
+        
+                
+        
+        
                 
         
         
